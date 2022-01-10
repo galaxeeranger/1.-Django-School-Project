@@ -327,6 +327,13 @@ def check_username_exist(request):
     else:
         return HttpResponse(False)
 
+def admin_profile(request):
+    user = CustomUser.objects.get(id=request.user.id)
+
+    context={
+        "user": user
+    }
+    return render(request, 'hod_template/admin_profile.html', context)
 
 def admin_profile_update(request):
     if request.method != "POST":
