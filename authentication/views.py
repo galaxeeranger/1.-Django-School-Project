@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.views.generic import CreateView
 
-from authentication.forms import StudentSignupForm
+from forms import AddStudentForm
 
 
 
@@ -85,7 +85,7 @@ def register(request):
 
 class student_register(CreateView):
     model = User
-    form_class = StudentSignupForm
+    form_class = AddStudentForm
     template_name = '/authentication/'
 
 
